@@ -54,7 +54,6 @@ const questions = [
 function writeToFile(fileName, data) {
     fs.form(fileName, data, function (err) {
         if (err) {
-            console.log(err)
         }
     })
 }
@@ -65,14 +64,21 @@ function displaySections() {
         .then(function (answers) {
             api.getTitle(`${answers.title}`).then(function (response) {
                 let form =
-                    `${answers.description}
-                 ${answers.contents}
-                 ${answers.installation}
-                 ${answers.usage}
-                 ${answers.license}
-                 ${answers.contributing}
-                 ${answers.tests}
-                 Questions? Contact me at ${response.data.email}`
+                    `## Project Description
+                     ${answers.description}
+                     ## Table of Contents
+                    ${answers.contents}
+                    ## Installation Instructions
+                    ${answers.installation}
+                    ## Project Usage
+                    ${answers.usage}
+                    ## Licenses
+                    ${answers.license}
+                    ## Contribution
+                    ${answers.contributing}
+                    ## Tests
+                    ${answers.tests}
+                    Questions? Contact me at ${response.data.email}`
 
                 writeToFile("ReadMe.md", form);
             }
