@@ -52,11 +52,21 @@ const questions = [
 ];
 
 function writeToFile(fileName, data) {
+    fileSys.form(fileName, data, function (err) {
+        if (err) {
+            console.log(err)
+        }
+    })
 }
 
-function init() {
+function displaySections() {
+
+    function init() {
+
+    }
+
+    init();
+
     writeToFile(questions);
-}
 
-init();
-
+    displaySections();
