@@ -3,11 +3,11 @@
     This README Generator is created through Node.js. It should produce a README, but I don't understand where it will generate?      
 ## Table of Contents
                 
-    * (#Installation-Instructions)
-    * (#Project-Usage)
-    * (#Licenses)
-    * (#Contribution)
-    * (#Tests)
+* [Installation Instructions](#Installation-Instructions)
+* [Project Usage](#Project-Usage)
+* [Licenses](#Licenses)
+* [Contribution](#Contribution)
+* [Tests](#Tests)
 
 ## Installation Instructions
     None   
