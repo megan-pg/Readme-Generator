@@ -55,7 +55,8 @@ function writeToFile(fileName, data) {
 }
 
 function init() {
-
+    writeToFile(questions);
 }
 
 init();
+
