@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
-const fileSys = require("fileSys");
-const api = require("./api");
+const fs = require("fs");
+//const api = require("./api");
 
 
 const questions = [
@@ -52,7 +52,7 @@ const questions = [
 ];
 
 function writeToFile(fileName, data) {
-    fileSys.form(fileName, data, function (err) {
+    fs.form(fileName, data, function (err) {
         if (err) {
             console.log(err)
         }
@@ -63,9 +63,25 @@ function displaySections() {
     inquirer
         .prompt(questions)
         .then(function (answers) {
-            api.getTitle(`${answers.title}`).then(function (response)
-            )}
-        )}
+            api.getTitle(`${answers.title}`).then(function (response) {
+                let form =
+                    `${answers.description}
+                 ${answers.contents}
+                 ${answers.installation}
+                 ${answers.usage}
+                 ${answers.license}
+                 ${answers.contributing}
+                 ${answers.tests}
+                 Questions? Contact me at ${response.data.email}`
+
+                writeToFile("ReadMe.md", form);
+            }
+            )
+
+        }
+        )
+
+}
 
 function init() {
 
@@ -73,6 +89,6 @@ function init() {
 
 init();
 
-writeToFile(questions);
+
 
 displaySections();
