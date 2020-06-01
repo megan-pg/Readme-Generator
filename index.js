@@ -68,6 +68,11 @@ function displaySections() {
                      ${answers.description}
                      ## Table of Contents
                     ${answers.contents}
+                    * [Installation Instructions](#Installation-Instructions)
+                    * [Project Usage](#Project-Usage)
+                    * [Licenses](#Licenses)
+                    * [Contribution](#Contribution)
+                    * [Tests](#Tests)
                     ## Installation Instructions
                     ${answers.installation}
                     ## Project Usage
