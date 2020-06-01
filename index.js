@@ -60,13 +60,19 @@ function writeToFile(fileName, data) {
 }
 
 function displaySections() {
+    inquirer
+        .prompt(questions)
+        .then(function (answers) {
+            api.getTitle(`${answers.title}`).then(function (response)
+            )}
+        )}
 
-    function init() {
+function init() {
 
-    }
+}
 
-    init();
+init();
 
-    writeToFile(questions);
+writeToFile(questions);
 
-    displaySections();
+displaySections();
